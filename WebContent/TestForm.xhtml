@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+   		
+		<head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		</head>
+
+<body>
+
+	<ui:composition template="/layouts/commonLayout.xhtml">
+
+		<ui:define name="content">
+			<style>
+* {
+	font-family: Helvetica;
+}
+
+body {
+	background-color: #DDD;
+}
+
+.inputForm {
+	border: 1px black solid;
+	margin: auto;
+	width: 80%;
+	border-radius: 5px;
+	padding: 10px;
+}
+</style>
+			<div class="inputForm" align="center">
+
+				<h:form>
+					<p>
+						First Name:
+						<h:inputText id="firstName" value="#{user.firstName}" />
+						<!-- <h:message for="firstName"/>-->
+						<br />
+					</p>
+					<p>
+						Last Name:
+						<h:inputText value="#{user.lastName}" />
+					</p>
+					<p>
+
+						<h:commandButton action="#{formController.onSubmit()}"
+							value="Submit" />
+					</p>
+				</h:form>
+				<h:messages />
+			</div>
+		</ui:define>
+
+
+	</ui:composition>
+	
+</body>
+		
+</html>
