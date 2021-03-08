@@ -34,7 +34,7 @@
 	font-weight: bold;
 }
 body{
-	background-color: #DDD;
+	background-color: coral;
 }
 
 </style>
@@ -42,7 +42,7 @@ body{
 				<p>Hello #{user.firstName}. Your orders are:</p>
 
 
-				<h:dataTable value="#{orders.orders}" var="o"
+				<h:dataTable value="#{formController.service.orders}" var="o"
 					styleClass="order-table" headerClass="order-table-header"
 					rowClasses="order-table-odd, order-table-even">
 					<h:column>
